@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha --exit",
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
