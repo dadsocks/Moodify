@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: FwOs6QBM8zUR7NVFxjYJAODPzCD4EeYbeLVdKbWNyzJhuYS+Xd2euw2ys+C1y6hj39dgORWfipOdjAXC3JXLriJlEcm3QYkfy1WqwYrs/mXyZ3RHeHWVXA3TMyhWtupMTcmlgM0+TS56R2MY9iyeo5EpbYM9mcu9tUzd3pw8w4hUhx0OJh99enw16exY9i5nwFTQHFI3amMsbAAGe+FrabPy2irzexaa39MGsxxByN9AKEfbEJ006HiTDKLIXRRuq19Ww7iyKZ+igkS4/m9EsYFxd/6kC5boXeXOd9PDh/gh8X6Vvsk1e5jNTdf4ZBD6jawleNlb9Vg+NsZhjhqJLku8QTtfX8Va4Hk7KrBhZgUKVcTPIGyQUaTRaIA/pp9J2S9+qQnolSupeDXhDWxK04yCySMOv/GjxeSAKbYsY4AhG1J5rym1D/MvaKGPf5hxfgmwn+JibpjIW1z7xt3ZGuKDsPqeufGjczLHM5O6dKUpTLyuAm6LWtmsjeS4m5JR1dHTMNYBW0rdTh/B/uGyohF1r+f5HHL0W1/uypeXCwafM9YPL4PAFd+SQmGm5FhhKEFeVqUHburBmc+bHhwRMan1lTanWvbkYWCL/flHpwpex7p7JzaG76CfxAbEctBLXXFa/aznLLKWffGhy6qTLGzDycjK0eB3KsUgou/mOik=
+  app: secure-reaches-65249
+  on:
+    repo: dadsocks/moodify
