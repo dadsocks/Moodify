@@ -49,6 +49,7 @@ main {
   justify-content: center;
   font-family: 'Roboto Condensed', sans-serif;
   color: white;
+  width: 100%;
 }
 
 .landing-page-form-container {
@@ -148,8 +149,39 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width:80%;
+  width:90%;
   list-style-type: none;
+  margin-top: 20px;
+}
+
+.category-container {
+	display: flex;
+	justify-content: center;
+	align-content: middle;
+  height: 289px;
+  width: 289px;
+  background-color: white;
+  margin: 10px;
+}
+
+.category-container a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	height: 100%;
+	width: 100%;
+	color: black;
+}
+
+.category-container a:hover {
+	background-color: #009EF6;
+	color: white;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
 }
 
 .profile-card {

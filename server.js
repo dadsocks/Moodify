@@ -1,15 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
-require('dotenv').config();
+const path = require('path');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const {DATABASE_URL, PORT} = require('./config');
 const app = express();
-
 const tweetRouter = require('./routes/tweetRouter');
 const authRouter = require('./routes/auth');
-
-const path = require('path');
+const categories = require('./routes/categories');
 
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
@@ -17,14 +15,15 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan('common'));
-app.use(express.static('public'));
+app.use(express.static( __dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.send('./public/landingPage.html');
+  res.sendFile(path.join(__dirname, 'public', 'landingPage.html' ));
 });
 
 app.use('/tweet-mood',tweetRouter);
 app.use('/auth',authRouter);
+app.use('/categories',categories);
 
 
 
