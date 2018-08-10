@@ -9,11 +9,26 @@ router.get('/', (req,res) => {
     headers: twitterConfig.headers
   })
   .then((categories) => {
-    console.log("categories",categories.data);
-    console.log("SUCCESS");
     res.send(categories.data);
   })
   .catch((error) => {
+    res.status(400).send(error);
+  });
+})
+
+router.get('/:category', (req,res) => {
+  const categoryURL = `https://api.twitter.com/1.1/users/suggestions/${req.params.category}.json`;
+  console.log(categoryURL);
+
+  axios.get(categoryURL, {
+    headers: twitterConfig.headers
+  })
+  .then((suggestions) => {
+    console.log('SUGGEST',suggestions);
+    res.send(suggestions.data);
+  })
+  .catch((error) => {
+    console.log(error.response.data);
     res.status(400).send(error);
   });
 })
